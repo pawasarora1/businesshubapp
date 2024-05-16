@@ -29,7 +29,7 @@ function AddsListScreen({navigation}) {
               style={{height: 30, width: 30}}
             />
             <TextInput
-              placeholder="Search for adds"
+              placeholder="Search for ads"
               placeholderTextColor={colors.black}
               style={{fontSize: 15, width: '70%'}}
               value={search}

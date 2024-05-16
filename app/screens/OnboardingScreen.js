@@ -205,7 +205,7 @@ export default function OnboardingScreen({navigation}) {
         {currentIndex > 0 && (
           <TouchableOpacity
             style={{
-              backgroundColor: colors.lightPrimary,
+              backgroundColor: colors.lightprimary,
               borderRadius: 30,
               height: 45,
               width: 45,

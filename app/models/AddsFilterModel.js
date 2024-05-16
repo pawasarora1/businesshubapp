@@ -13,11 +13,15 @@ import {
 import AppButton from '../components/AppButton';
 import Header from '../components/Header';
 import ScreenComponent from '../components/ScreenComponent';
+import SliderComponent from '../components/SliderComponent';
 import colors from '../config/colors';
 
 function AddsFilterModel({visible, setVisible}) {
   const [location, setLocation] = useState('');
   const [Keyword, setKeyword] = useState('');
+  const [sliderPrice, setSliderPrice] = useState('');
+  const [category, setCategory] = useState('');
+  const [subCategory, setSubCategory] = useState('');
   return (
     <Modal
       visible={visible}
@@ -36,10 +40,7 @@ function AddsFilterModel({visible, setVisible}) {
               placeholder="Ex: Dubai Mariana"
               autoCapitalize="none"
               value={location}
-              onChangeText={txt => {
-                setLocation(txt);
-              }}
-              keyboardType="email-address"
+              onChangeText={setLocation}
             />
             <Text style={{color: colors.gray, marginTop: 5}}>
               Select the cities neighbourhood or buildings that you want to
@@ -51,10 +52,7 @@ function AddsFilterModel({visible, setVisible}) {
               placeholder="Ex: XYZ Buisness for sale"
               autoCapitalize="none"
               value={Keyword}
-              onChangeText={txt => {
-                setKeyword(txt);
-              }}
-              keyboardType="email-address"
+              onChangeText={setKeyword}
             />
             <Text style={styles.inputLable}>Price</Text>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -62,13 +60,9 @@ function AddsFilterModel({visible, setVisible}) {
                 style={[styles.input, {flex: 1}]}
                 placeholder="Start"
                 autoCapitalize="none"
-                value={Keyword}
-                onChangeText={txt => {
-                  setKeyword(txt);
-                }}
+                value={'0'}
                 editable={false}
                 pointerEvents="none"
-                keyboardType="email-address"
               />
               <Text
                 style={{
@@ -82,42 +76,44 @@ function AddsFilterModel({visible, setVisible}) {
                 style={[styles.input, {flex: 1}]}
                 placeholder="End"
                 autoCapitalize="none"
-                value={Keyword}
-                onChangeText={txt => {
-                  setKeyword(txt);
-                }}
-                keyboardType="email-address"
+                value={sliderPrice.toString()}
                 editable={false}
                 pointerEvents="none"
               />
             </View>
+            <SliderComponent
+              value={sliderPrice}
+              onChange={val => setSliderPrice(val[0].toFixed(0))}
+              minValue={0}
+              maxValue={50000}
+            />
             <Text style={styles.inputLable}>Categories</Text>
             <TextInput
               style={styles.input}
               placeholder="Select Category"
               autoCapitalize="none"
-              value={Keyword}
-              onChangeText={txt => {
-                setKeyword(txt);
-              }}
-              keyboardType="email-address"
+              value={category}
+              onChangeText={setCategory}
             />
-            <Text style={styles.inputLable}>Price</Text>
+            <Text style={styles.inputLable}>Sub Categories</Text>
             <TextInput
               style={styles.input}
               placeholder="Select Sub Category"
               autoCapitalize="none"
-              value={Keyword}
-              onChangeText={txt => {
-                setKeyword(txt);
-              }}
-              keyboardType="email-address"
+              value={subCategory}
+              onChangeText={setSubCategory}
             />
             <View style={styles.bottomContainer}>
-              <TouchableOpacity style={{paddingVertical: 5}}>
+              <TouchableOpacity
+                style={{paddingVertical: 5}}
+                onPress={setVisible}>
                 <Text style={styles.resetText}>Reset Filters</Text>
               </TouchableOpacity>
-              <AppButton label="Filter" style={{width: '30%'}} />
+              <AppButton
+                label="Apply Filters"
+                style={{width: '35%'}}
+                onPress={setVisible}
+              />
             </View>
           </ScrollView>
         </KeyboardAvoidingView>

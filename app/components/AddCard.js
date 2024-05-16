@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowOffset: {height: 2, width: 0},
     marginBottom: 20,
+    backgroundColor: colors.white,
   },
   detailsContainer: {
     padding: 10,
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.lightPrimary,
+    backgroundColor: colors.lightprimary,
     borderRadius: 10,
     gap: 10,
     padding: 8,

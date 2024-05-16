@@ -116,7 +116,7 @@ function MainScreen({navigation}) {
           />
           <AppIcon
             source={require('../assets/add.png')}
-            title="Place Add"
+            title="Place Ad"
             onPress={() => handleSelect('Place Add')}
             imageStyle={{
               tintColor:

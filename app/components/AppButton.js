@@ -9,13 +9,18 @@ import {
 import colors from '../config/colors';
 const {width} = Dimensions.get('screen');
 
-function AppButton({label = '', onPress, style}) {
+function AppButton({label = '', onPress, style, textStyle}) {
   return (
     <TouchableOpacity
       activeOpacity={0.5}
       style={[styles.container, {...style}]}
       onPress={onPress}>
-      <Text style={styles.label}>{label}</Text>
+      <Text
+        style={[styles.label, {...textStyle}]}
+        numberOfLines={1}
+        adjustsFontSizeToFit>
+        {label}
+      </Text>
     </TouchableOpacity>
   );
 }
@@ -34,6 +39,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontWeight: 'bold',
     fontSize: 16,
+    marginHorizontal: 10,
   },
 });
 export default AppButton;
