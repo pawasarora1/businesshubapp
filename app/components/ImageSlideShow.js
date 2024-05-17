@@ -1,22 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {View, ScrollView, Dimensions, StyleSheet, Image} from 'react-native';
 import colors from '../config/colors';
+import {placesImages} from '../Utils/data';
 
 const {width: screenWidth} = Dimensions.get('window');
 
 function ImageSlideShow(props) {
-  const images = [
-    require('../assets/images/img1.jpg'),
-    require('../assets/images/img2.jpg'),
-    require('../assets/images/img3.jpg'),
-    require('../assets/images/img4.jpg'),
-    require('../assets/images/img5.jpg'),
-    require('../assets/images/img6.jpg'),
-    require('../assets/images/img7.jpg'),
-    require('../assets/images/img8.jpg'),
-    require('../assets/images/img9.jpg'),
-    require('../assets/images/img10.jpg'),
-  ];
+  const images = placesImages;
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollViewRef = useRef(null);
 

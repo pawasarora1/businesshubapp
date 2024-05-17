@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Header from '../components/Header';
 import ScreenComponent from '../components/ScreenComponent';
+import WarningComponent from '../components/WarningComponent';
 import colors from '../config/colors';
 
 function MyAdsScreen(props) {
@@ -35,6 +36,9 @@ function MyAdsScreen(props) {
           isActive={active == 'Rejected'}
           onPress={() => setActive('Rejected')}
         />
+      </View>
+      <View style={{flex: 1, paddingTop: '50%'}}>
+        <WarningComponent title={'Ads'} />
       </View>
     </ScreenComponent>
   );

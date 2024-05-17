@@ -9,7 +9,7 @@ function SavedSearchesScreen(props) {
     <ScreenComponent style={styles.container}>
       <Header label={'Saved Searches'} />
       <View style={{flex: 1, paddingTop: '50%'}}>
-        <WarningComponent />
+        <WarningComponent title={'Searches'} />
       </View>
     </ScreenComponent>
   );

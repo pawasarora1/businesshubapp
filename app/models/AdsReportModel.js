@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -9,8 +9,12 @@ import {
 } from 'react-native';
 import colors from '../config/colors';
 import {reportTypes} from '../Utils/data';
+import {useNavigation} from '@react-navigation/native';
+import AppButton from '../components/AppButton';
 
-function AddsSortModel({visible, setVisible, selected, setSelected}) {
+function AdsReportModel({visible, setVisible}) {
+  const [selected, setSelected] = useState('');
+  const navigation = useNavigation();
   return (
     <Modal
       visible={visible}
@@ -25,7 +29,7 @@ function AddsSortModel({visible, setVisible, selected, setSelected}) {
         }}
       />
       <View style={styles.container}>
-        <Text style={styles.topLable}>Sort By</Text>
+        <Text style={styles.topLable}>Report an Ad</Text>
         <FlatList
           scrollEnabled={false}
           data={reportTypes}
@@ -43,6 +47,18 @@ function AddsSortModel({visible, setVisible, selected, setSelected}) {
             );
           }}
         />
+        {selected !== '' && (
+          <AppButton
+            label="Report"
+            style={{marginTop: 10}}
+            onPress={() => {
+              setVisible();
+              setTimeout(() => {
+                navigation.goBack();
+              }, 200);
+            }}
+          />
+        )}
       </View>
     </Modal>
   );
@@ -89,4 +105,4 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 });
-export default AddsSortModel;
+export default AdsReportModel;
