@@ -8,6 +8,7 @@ import ChangePasswordScreen from '../screens/ChangePasswordScreen';
 import SavedSearchesScreen from '../screens/SavedSearchesScreen';
 import MyAdsScreen from '../screens/MyAdsScreen';
 import ProfilePublicScreen from '../screens/ProfilePublicScreen';
+import FavouritesDetailsScreen from '../screens/FavouritesDetailsScreen';
 
 function AppNavigator(props) {
   const Stack = createNativeStackNavigator();
@@ -21,6 +22,10 @@ function AppNavigator(props) {
       <Stack.Screen name="SavedSearches" component={SavedSearchesScreen} />
       <Stack.Screen name="MyAds" component={MyAdsScreen} />
       <Stack.Screen name="ProfilePublic" component={ProfilePublicScreen} />
+      <Stack.Screen
+        name="FavouritesDetails"
+        component={FavouritesDetailsScreen}
+      />
     </Stack.Navigator>
   );
 }

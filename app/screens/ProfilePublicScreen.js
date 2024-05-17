@@ -3,6 +3,7 @@ import {View, StyleSheet, Image, Text} from 'react-native';
 import AppButton from '../components/AppButton';
 import Header from '../components/Header';
 import ScreenComponent from '../components/ScreenComponent';
+import WarningComponent from '../components/WarningComponent';
 import colors from '../config/colors';
 
 function ProfilePublicScreen(props) {
@@ -52,6 +53,9 @@ function ProfilePublicScreen(props) {
             backgroundColor: !isAdsActive ? colors.primary : colors.transparent,
           }}
         />
+      </View>
+      <View style={{flex: 1, paddingTop: '40%'}}>
+        <WarningComponent title={isAdsActive ? 'Ads' : 'Ratings'} />
       </View>
     </ScreenComponent>
   );

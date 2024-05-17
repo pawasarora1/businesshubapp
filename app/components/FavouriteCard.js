@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {
   View,
@@ -11,9 +12,14 @@ import colors from '../config/colors';
 const {width} = Dimensions.get('screen');
 
 function FavouriteCard({item}) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Image source={item.image} style={styles.image} />
+      <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => navigation.navigate('FavouritesDetails', item)}>
+        <Image source={item.image} style={styles.image} />
+      </TouchableOpacity>
       <View style={styles.detailsContainer}>
         <Text style={{color: colors.primary, fontWeight: '700'}}>
           {item.amount}

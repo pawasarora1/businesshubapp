@@ -2,16 +2,14 @@ import React from 'react';
 import {View, StyleSheet, Image, Text} from 'react-native';
 import colors from '../config/colors';
 
-function WarningComponent(props) {
+function WarningComponent({title, style}) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {...style}]}>
       <Image
         source={require('../assets/warning.png')}
         style={{height: 40, width: 40, tintColor: colors.primary}}
       />
-      <Text style={styles.txt}>
-        It's like a desert in here You dont have any searches.
-      </Text>
+      <Text style={styles.txt}>You don't have any {title}.</Text>
     </View>
   );
 }

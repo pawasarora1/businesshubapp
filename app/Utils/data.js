@@ -75,4 +75,27 @@ const sortLabels = [
   'Price Lowest to highest',
 ];
 
-export {countries, bussiness, adds, sortLabels};
+const placesImages = [
+  require('../assets/images/img1.jpg'),
+  require('../assets/images/img2.jpg'),
+  require('../assets/images/img3.jpg'),
+  require('../assets/images/img4.jpg'),
+  require('../assets/images/img5.jpg'),
+  require('../assets/images/img6.jpg'),
+  require('../assets/images/img7.jpg'),
+  require('../assets/images/img8.jpg'),
+  require('../assets/images/img9.jpg'),
+  require('../assets/images/img10.jpg'),
+];
+
+const reportTypes = [
+  'Spam',
+  'Fraud',
+  'Miscategorized',
+  'Repetive Listing',
+  'Copyright Infringement',
+  'Not available',
+  'Incorrect Pricing',
+];
+
+export {countries, bussiness, adds, sortLabels, placesImages, reportTypes};
