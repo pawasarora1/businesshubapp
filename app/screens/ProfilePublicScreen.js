@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, Image, Text} from 'react-native';
+import AdsRatingSelector from '../components/AdsRatingSelector';
 import AppButton from '../components/AppButton';
 import Header from '../components/Header';
 import ScreenComponent from '../components/ScreenComponent';
@@ -23,39 +24,9 @@ function ProfilePublicScreen(props) {
           </View>
         </View>
       </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          marginTop: 5,
-          backgroundColor: colors.lightprimary,
-          borderWidth: 1,
-          borderColor: colors.primary,
-          borderRadius: 10,
-        }}>
-        <AppButton
-          onPress={() => setIsAdsActive(true)}
-          textStyle={{color: isAdsActive ? colors.white : colors.primary}}
-          label="Ads"
-          style={{
-            width: '50%',
-            borderRadius: 9,
-            backgroundColor: isAdsActive ? colors.primary : colors.transparent,
-          }}
-        />
-        <AppButton
-          onPress={() => setIsAdsActive(false)}
-          label="Rating"
-          textStyle={{color: !isAdsActive ? colors.white : colors.primary}}
-          style={{
-            width: '50%',
-            borderRadius: 9,
-            backgroundColor: !isAdsActive ? colors.primary : colors.transparent,
-          }}
-        />
-      </View>
+      <AdsRatingSelector />
       <View style={{flex: 1, paddingTop: '40%'}}>
-        <WarningComponent title={isAdsActive ? 'Ads' : 'Ratings'} />
+        <WarningComponent title={'Ads'} />
       </View>
     </ScreenComponent>
   );

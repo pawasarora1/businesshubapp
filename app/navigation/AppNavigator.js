@@ -9,6 +9,10 @@ import SavedSearchesScreen from '../screens/SavedSearchesScreen';
 import MyAdsScreen from '../screens/MyAdsScreen';
 import ProfilePublicScreen from '../screens/ProfilePublicScreen';
 import FavouritesDetailsScreen from '../screens/FavouritesDetailsScreen';
+import ChatScreen from '../components/ChatScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
+import SalesTypesScreen from '../screens/SalesTypesScreen';
+import SalesCategoryScreen from '../screens/SalesCategoryScreen';
 
 function AppNavigator(props) {
   const Stack = createNativeStackNavigator();
@@ -26,6 +30,10 @@ function AppNavigator(props) {
         name="FavouritesDetails"
         component={FavouritesDetailsScreen}
       />
+      <Stack.Screen name="Chat" component={ChatScreen} />
+      <Stack.Screen name="Notifications" component={NotificationsScreen} />
+      <Stack.Screen name="SalesTypes" component={SalesTypesScreen} />
+      <Stack.Screen name="SalesCategory" component={SalesCategoryScreen} />
     </Stack.Navigator>
   );
 }

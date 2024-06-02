@@ -1,8 +1,17 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  FlatList,
+  Platform,
+  Dimensions,
+} from 'react-native';
+import MessageInboxCard from '../components/MessageInboxCard';
 import ScreenComponent from '../components/ScreenComponent';
-import WarningComponent from '../components/WarningComponent';
 import colors from '../config/colors';
+import {inboxMessages} from '../Utils/data';
+const {height} = Dimensions.get('screen');
 
 function MessagesScreen(props) {
   return (
@@ -10,13 +19,20 @@ function MessagesScreen(props) {
       <View style={styles.header}>
         <Text style={styles.fvt}>Messages</Text>
       </View>
-      <WarningComponent title={'Messages'} style={{paddingTop: '60%'}} />
+      <FlatList
+        data={inboxMessages}
+        renderItem={({item}) => {
+          return <MessageInboxCard item={item} />;
+        }}
+      />
     </ScreenComponent>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    paddingTop: Platform.OS == 'android' ? 0 : height * 0.05,
+  },
   header: {
     backgroundColor: colors.white,
     padding: 15,
@@ -24,10 +40,12 @@ const styles = StyleSheet.create({
     shadowColor: colors.black,
     shadowOpacity: 0.1,
     shadowOffset: {height: 5, width: 0},
+    elevation: 10,
   },
   fvt: {
     fontSize: 18,
     fontWeight: '600',
+    color: colors.black,
   },
 });
 export default MessagesScreen;

@@ -23,7 +23,9 @@ function Header({label, onPressBack}) {
           imageStyle={{tintColor: colors.white, height: 18, width: 18}}
         />
       )}
-      <Text style={{fontSize: 20, fontWeight: '700'}}>{label}</Text>
+      <Text style={{fontSize: 20, fontWeight: '700', color: colors.black}}>
+        {label}
+      </Text>
     </View>
   );
 }
