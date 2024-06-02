@@ -57,7 +57,7 @@ function FavouritesDetailsScreen({route}) {
       />
       <View style={styles.bottomContainer}>
         <ScrollView
-          contentContainerStyle={{paddingBottom: 50}}
+          contentContainerStyle={{paddingBottom: 100}}
           showsVerticalScrollIndicator={false}>
           <View
             style={{

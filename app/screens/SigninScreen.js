@@ -82,7 +82,7 @@ function SigninScreen({navigation}) {
         <TouchableOpacity
           onPress={() => navigation.navigate('Signup')}
           style={{padding: 5, marginTop: -5}}>
-          <Text style={{fontWeight: 'bold'}}>Sign up</Text>
+          <Text style={{fontWeight: 'bold', color: colors.black}}>Sign up</Text>
         </TouchableOpacity>
       </View>
     </ScreenComponent>
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: '5%',
     marginTop: '10%',
+    color: colors.black,
   },
   inputLable: {
     fontSize: 16,

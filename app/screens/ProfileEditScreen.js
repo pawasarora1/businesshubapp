@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   TextInput,
   Text,
+  Dimensions,
 } from 'react-native';
 import AppButton from '../components/AppButton';
 import AppIcon from '../components/AppIcon';
@@ -16,6 +17,7 @@ import Header from '../components/Header';
 import ScreenComponent from '../components/ScreenComponent';
 import SwitchComponent from '../components/SwitchComponent';
 import colors from '../config/colors';
+const {width} = Dimensions.get('screen');
 
 function ProfileEditScreen({navigation}) {
   const [name, setName] = useState('');
@@ -119,7 +121,8 @@ function ProfileEditScreen({navigation}) {
               source={require('../assets/offer.png')}
               style={{height: 25, width: 25}}
             />
-            <Text style={{fontSize: 16, fontWeight: '600'}}>
+            <Text
+              style={{fontSize: 16, fontWeight: '600', color: colors.black}}>
               Offers and bargains
             </Text>
             <View style={{flex: 1}} />
@@ -133,7 +136,8 @@ function ProfileEditScreen({navigation}) {
               source={require('../assets/news.png')}
               style={{height: 20, width: 20, marginRight: 5}}
             />
-            <Text style={{fontSize: 16, fontWeight: '600'}}>
+            <Text
+              style={{fontSize: 16, fontWeight: '600', color: colors.black}}>
               Weekly newsletter
             </Text>
             <View style={{flex: 1}} />
@@ -162,6 +166,7 @@ const styles = StyleSheet.create({
     zIndex: -1,
     height: 200,
     alignSelf: 'center',
+    width: width,
   },
   imageContainer: {
     height: 120,

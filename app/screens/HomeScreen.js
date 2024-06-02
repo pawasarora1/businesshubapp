@@ -3,20 +3,28 @@ import {
   Dimensions,
   FlatList,
   Image,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+import AppIcon from '../components/AppIcon';
 import ImageSlideShow from '../components/ImageSlideShow';
 import colors from '../config/colors';
 import {bussiness, countries} from '../Utils/data';
-const {width} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('screen');
 
 function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
+      <AppIcon
+        onPress={() => navigation.navigate('Notifications')}
+        source={require('../assets/bell.png')}
+        iconStyle={styles.icon}
+        imageStyle={{tintColor: colors.white, height: 18, width: 18}}
+      />
       <ImageSlideShow />
       <View style={styles.bottomContainer}>
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -39,6 +47,7 @@ function HomeScreen({navigation}) {
                 const isNotThirdColumn = index % 3 !== 2;
                 return (
                   <TouchableOpacity
+                    onPress={() => navigation.navigate('SalesTypes')}
                     style={[
                       styles.countryBox,
                       {marginRight: isNotThirdColumn ? 30 : 0},
@@ -147,6 +156,19 @@ const styles = StyleSheet.create({
     transform: [{rotate: '180deg'}],
     height: 20,
     width: 20,
+  },
+  icon: {
+    backgroundColor: colors.primary,
+    height: 40,
+    width: 40,
+    borderRadius: 13,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    zIndex: 1,
+    marginTop: Platform.OS == 'ios' ? height * 0.05 : 10,
+    alignSelf: 'flex-end',
+    right: 15,
   },
 });
 export default HomeScreen;

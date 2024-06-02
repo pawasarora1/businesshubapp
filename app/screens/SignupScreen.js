@@ -132,7 +132,9 @@ function SignupScreen({navigation}) {
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={{padding: 5, marginTop: -5}}>
-            <Text style={{fontWeight: 'bold'}}>Sign in</Text>
+            <Text style={{fontWeight: 'bold', color: colors.black}}>
+              Sign in
+            </Text>
           </TouchableOpacity>
         </View>
       </KeyboardAwareScrollView>
@@ -149,6 +151,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: '5%',
     marginTop: '10%',
+    color: colors.black,
   },
   inputLable: {
     fontSize: 16,

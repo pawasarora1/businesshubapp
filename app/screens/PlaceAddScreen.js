@@ -8,11 +8,12 @@ import {
   TouchableOpacity,
   Image,
   Animated,
+  Platform,
 } from 'react-native';
 import ScreenComponent from '../components/ScreenComponent';
 import colors from '../config/colors';
 import {countries} from '../Utils/data';
-const {width} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('screen');
 
 function PlaceAddScreen(props) {
   const scrollY = useRef(new Animated.Value(0)).current;
@@ -92,6 +93,9 @@ function PlaceAddScreen(props) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingTop: Platform.OS == 'android' ? 0 : height * 0.05,
+  },
   header: {
     backgroundColor: colors.white,
     padding: 6,
@@ -99,10 +103,12 @@ const styles = StyleSheet.create({
     shadowColor: colors.black,
     shadowOpacity: 0.1,
     shadowOffset: {height: 5, width: 0},
+    elevation: 10,
   },
   headerText: {
     fontSize: 18,
     fontWeight: '600',
+    color: colors.black,
   },
   chevronText: {
     color: colors.black,

@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     width: '70%',
     textAlign: 'center',
     marginTop: 10,
+    color: colors.black,
   },
 });
 export default WarningComponent;

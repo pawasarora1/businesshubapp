@@ -8,7 +8,7 @@ import AppNavigator from './app/navigation/AppNavigator';
 import AuthNavigator from './app/navigation/AuthNavigator';
 
 function App(props) {
-  const [user, setUser] = useState(123);
+  const [user, setUser] = useState(null);
   return (
     <AuthContext.Provider value={{user, setUser}}>
       <GestureHandlerRootView style={{flex: 1}}>

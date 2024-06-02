@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: '10%',
     marginTop: '10%',
+    color: colors.black,
   },
   inputLable: {
     fontSize: 16,

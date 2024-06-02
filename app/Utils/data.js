@@ -98,4 +98,134 @@ const reportTypes = [
   'Incorrect Pricing',
 ];
 
-export {countries, bussiness, adds, sortLabels, placesImages, reportTypes};
+const inboxMessages = [
+  {
+    name: 'John Kevin',
+    lastMessage: 'What kind of strategy is better?',
+    date: '11/16/19',
+    image: '',
+  },
+  {
+    name: 'Andrew Parker',
+    lastMessage: 'How do you do',
+    date: '11/16/19',
+    image: '',
+  },
+  {
+    name: 'Karen Castillo',
+    lastMessage: 'Bro, I have a good idea!',
+    date: '11/16/19',
+    image: '',
+  },
+  {
+    name: 'Maximillian Jacobson',
+    lastMessage: 'Hlo',
+    date: '11/16/19',
+    image: '',
+  },
+  {name: 'Martha Craig', lastMessage: 'Hey', date: '11/16/19', image: ''},
+  {
+    name: 'Tabitha Potter',
+    lastMessage:
+      'Actually I wanted to check with you about › your online business plan on',
+    date: '11/16/19',
+    image: '',
+  },
+  {
+    name: 'Maisy Humphrey',
+    lastMessage: 'Welcome, to make design process faster, look at Pixsellz',
+    date: '11/16/19',
+    image: '',
+  },
+  {
+    name: 'Kieron Dotson',
+    lastMessage: 'Ok, have a good trip!',
+    date: '11/16/19',
+    image: '',
+  },
+  {name: 'Kieron Dotson', lastMessage: 'OK', date: '11/16/19', image: ''},
+];
+
+const dummyChat = [
+  {position: 'right', text: 'Hi, available for snow removal tomorrow?'},
+  {
+    position: 'left',
+    text: "Hello! Yes, we're available. Where is your property located?",
+  },
+  {position: 'right', text: "It's in 987 Willow Lane, Springvale, CA, 90210"},
+  {position: 'left', text: 'Got it. We can definitely help you out.'},
+  {position: 'lett', text: 'What time works best for you?'},
+  {position: 'right', text: 'How about around 9 AM?'},
+  {position: 'left', text: "That works for us. We'll see you then"},
+  {position: 'right', text: 'Great, thank you!'},
+];
+
+const salesTypes = [
+  {title: 'Businesses for Sale', image: require('../assets/businessSale.png')},
+  {title: 'Shares for Sale', image: require('../assets/SharesSale.png')},
+  {title: 'Business Ideas', image: require('../assets/businessIdea.png')},
+  {title: 'Investors', image: require('../assets/investor.png')},
+  {
+    title: 'Investors Required',
+    image: require('../assets/investorRequired.png'),
+  },
+  {title: 'Franchise Opportunities', image: require('../assets/franchise.png')},
+  {title: 'Machinery & Supplies', image: require('../assets/machinary.png')},
+  {title: 'Export & Import Trade', image: require('../assets/export.png')},
+];
+
+const salesCatogries = [
+  'Business Services',
+  'Government Services',
+  'Trading & Forex',
+  'Real Estate',
+  'Commercial',
+  'Retail & Services',
+  'Food & Beverage',
+  'Industrial',
+  'Healthcare & Laboratory',
+  'Businesses for Rent',
+  'Assets & Interiors',
+  'Trade Licenses',
+  'Electrical Equipments',
+  'Veterinary',
+  'Manufacturing',
+  'Marketing',
+  'Garage & Workshops',
+  'Construction',
+  'Packaging & Shipping',
+  'Office Furniture & Equipments',
+  'Agriculture & Forestry',
+  'Trade & Distribution',
+  'Others',
+  'Industrial Supplies',
+  'All in Businesses for Sale',
+];
+
+const sharesSalesCategories = [
+  'Running Businesses',
+  'Start-up Businesses',
+  'International Businesses',
+  'All in Shares for Sale',
+];
+
+const exportSalesCategories = [
+  'Manufacturer',
+  'Distributor',
+  'All in Export & Import Trade',
+];
+
+export {
+  countries,
+  bussiness,
+  adds,
+  sortLabels,
+  placesImages,
+  reportTypes,
+  inboxMessages,
+  dummyChat,
+  salesTypes,
+  salesCatogries,
+  sharesSalesCategories,
+  exportSalesCategories,
+};
